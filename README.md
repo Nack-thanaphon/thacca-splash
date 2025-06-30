@@ -1,54 +1,69 @@
-# 🚀 Tap On It - Smart Review Management System
+# 🌊 THACCA Splash - Creative Content Festival
 
-[![Next.js](https://img.shields.io/badge/Next.js-13+-black)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14+-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-06B6D4)](https://tailwindcss.com/)
-[![Supabase](https://img.shields.io/badge/Supabase-Backend-green)](https://supabase.com/)
+[![i18n](https://img.shields.io/badge/i18n-Multi--language-green)](https://www.i18next.com/)
 
 ## 📋 Overview
 
-Tap On It is a comprehensive review management system that helps businesses collect, manage, and display Google Reviews efficiently. Built with modern technologies for performance and scalability.
+THACCA Splash is a modern, multilingual website for Thailand's premier creative content festival. Built with Next.js 14 and featuring stunning visuals, interactive components, and seamless internationalization support for Thai and English languages.
 
 ### 🎯 Key Features
 
-- **📱 Smart Review Collection** - NFC integration for easy review requests
-- **🔄 Automated Review Sync** - Real-time Google Places API integration
-- **📊 Analytics Dashboard** - Comprehensive business insights
-- **🎨 Customizable Profiles** - Beautiful business presentation pages
-- **🌍 Multi-language Support** - Thai and English support
-- **📱 Mobile-First Design** - Responsive across all devices
+- **🌍 Multi-language Support** - Thai and English with next-i18next
+- **🎨 Modern Design** - Beautiful UI with Tailwind CSS and custom components
+- **📱 Responsive Layout** - Mobile-first design that works on all devices
+- **🖼️ Interactive Sliders** - Swiper.js integration for dynamic content display
+- **⚡ Performance Optimized** - Next.js 14 with App Router for blazing-fast performance
+- **🎭 Event Management** - Showcase multiple events and programs
+- **📅 Schedule Integration** - Interactive schedule and registration features
+- **🎵 Media Rich** - Support for images, videos, and interactive content
 
-## 🏗️ Architecture
-
-This project follows **Clean Architecture** principles with clear separation of concerns:
+## 🏗️ Project Structure
 
 ```
-📁 src/
-├── 📁 app/                    # Next.js 13+ App Router
-├── 📁 components/             # Reusable UI Components
-├── 📁 lib/                    # Core utilities & configs
-├── 📁 hooks/                  # Custom React hooks
-├── 📁 services/               # Business logic services
-├── 📁 stores/                 # State management (Zustand)
-├── 📁 types/                  # TypeScript definitions
-└── 📁 providers/              # React context providers
+📁 thacca-splash/
+├── 📁 public/                 # Static assets
+│   ├── 📁 font/              # Custom fonts (Inter, Kanit, Noto Sans Thai)
+│   ├── 📁 image/             # Images organized by category
+│   │   ├── 📁 event/         # Event images
+│   │   ├── 📁 header/        # Header banners
+│   │   ├── 📁 hero/          # Hero section images
+│   │   ├── 📁 icon/          # SVG icons
+│   │   ├── 📁 logo/          # Brand logos
+│   │   └── 📁 vector/        # Vector graphics
+│   └── 📁 locales/           # Translation files
+│       ├── 📁 en/            # English translations
+│       └── 📁 th/            # Thai translations
+├── 📁 src/
+│   ├── 📁 app/               # Next.js App Router
+│   │   ├── 📁 [lang]/        # Dynamic language routing
+│   │   └── 📁 context/       # React contexts
+│   ├── 📁 components/        # Reusable components
+│   │   ├── 📁 icon/          # Icon components
+│   │   ├── 📁 section/       # Page sections
+│   │   └── 📁 sliders/       # Slider components
+│   ├── 📁 config/            # Configuration files
+│   ├── 📁 lib/               # Utilities and constants
+│   └── 📁 types/             # TypeScript definitions
+└── 📄 Configuration files
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+
-- pnpm (recommended) or npm
-- Supabase account
-- Google Places API key
+- **Node.js** 18+ 
+- **pnpm** (recommended) or npm
+- Modern web browser
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-org/tap-on-it.git
-   cd tap-on-it
+   git clone https://github.com/your-org/thacca-splash.git
+   cd thacca-splash
    ```
 
 2. **Install dependencies**
@@ -56,153 +71,157 @@ This project follows **Clean Architecture** principles with clear separation of 
    pnpm install
    ```
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Fill in your environment variables:
-   ```env
-   # Supabase
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_KEY=your_supabase_anon_key
-   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-   
-   # Google APIs
-   GOOGLE_API_KEY=your_google_places_api_key
-   NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_maps_api_key
-   
-   # App Configuration
-   NEXT_PUBLIC_APP_URL=http://localhost:3000
-   ```
-
-4. **Set up the database**
-   ```bash
-   # Run migrations
-   node scripts/migrate-to-new-structure.js
-   ```
-
-5. **Start development server**
+3. **Start development server**
    ```bash
    pnpm dev
    ```
 
-6. **Open your browser**
+4. **Open your browser**
    ```
    http://localhost:3000
    ```
 
-## 📖 Documentation
+## 🌍 Internationalization
 
-### 🗂️ Project Structure
+The project supports Thai and English languages:
 
-- **[Project Structure Guide](PROJECT_STRUCTURE.md)** - Detailed architecture overview
-- **[Database Schema](database/README.md)** - Database design and migrations
-- **[API Documentation](docs/api.md)** - API endpoints and usage
+- **Default Language**: Thai (`th`)
+- **Supported Languages**: Thai (`th`), English (`en`)
+- **URL Structure**: `/{lang}/` (e.g., `/en/`, `/th/`)
+- **Translation Files**: Located in `public/locales/`
 
-### 🛠️ Development
+### Adding Translations
 
-- **Components** - Located in `src/components/`
-  - `ui/` - Base UI components (shadcn/ui)
-  - `features/` - Feature-specific components
-  - `layout/` - Layout components
-  - `forms/` - Form components
+1. Add new keys to `public/locales/en/common.json` and `public/locales/th/common.json`
+2. Use the `useTranslation` hook in components:
+   ```typescript
+   import { useTranslation } from 'react-i18next';
+   
+   function MyComponent() {
+     const { t } = useTranslation('common');
+     return <h1>{t('welcome')}</h1>;
+   }
+   ```
 
-- **Services** - Business logic in `src/services/`
-  - `client.service.ts` - Client/business management
-  - `review.service.ts` - Review operations
-  - `auth.service.ts` - Authentication
+## 🎨 Components
 
-- **State Management** - Zustand stores in `src/stores/`
-  - Lightweight, TypeScript-first
-  - No boilerplate required
+### Core Components
 
-## 🎨 UI/UX
+- **Button** - Reusable button with variants, sizes, and icon support
+- **Header** - Navigation with language switcher
+- **Footer** - Site footer with links and social media
+- **LanguageSwitcher** - Toggle between Thai and English
 
-Built with modern design principles:
+### Section Components
 
-- **Design System**: shadcn/ui components
-- **Styling**: Tailwind CSS for utility-first styling
-- **Icons**: Lucide React icons
-- **Fonts**: Noto Sans Thai for multi-language support
-- **Theme**: Light/Dark mode support
+- **HeroSection** - Main banner with hero slider
+- **EventSection** - Event showcase with auto-sliding carousel
+- **PlanSection** - Program plans in grid layout
+- **ScheduleSection** - Event schedule display
+- **RegisterSection** - Registration call-to-action
 
-## 🔧 Key Technologies
+### Slider Components
+
+- **HeroSlider** - Main hero carousel
+- **EventSlider** - Auto-sliding event cards (1 on mobile, 3 on desktop)
+- **PhotoSlider** - Image gallery slider
+- **PlanSlider** - Program plan grid display
+
+## 🎯 Key Features in Detail
+
+### Hero Section
+- **Dynamic Content** - Rotating hero banners
+- **Multi-language** - Localized content
+- **Responsive** - Optimized for all screen sizes
+
+### Event Management
+- **Auto-sliding Carousel** - 3-second intervals with infinite loop
+- **Responsive Display** - 1 card on mobile, 3 on desktop
+- **Interactive Cards** - Click-to-read-more functionality
+- **Color-coded** - Each event has unique branding
+
+### Plan Display
+- **Grid Layout** - 2 cards top row, 3 cards bottom row
+- **Custom Cards** - `PlanCard` component with schedule/register buttons
+- **Color Themes** - Each plan has distinctive color scheme
+
+## 🛠️ Technology Stack
 
 | Technology | Purpose | Version |
 |------------|---------|---------|
-| **Next.js** | React framework | 13+ |
-| **TypeScript** | Type safety | 5.0+ |
-| **Tailwind CSS** | Styling | 3.0+ |
-| **Supabase** | Backend & Database | Latest |
-| **Zustand** | State management | 4.0+ |
-| **React Hook Form** | Form handling | 7.0+ |
-| **Zod** | Schema validation | 3.0+ |
-| **Framer Motion** | Animations | 10.0+ |
+| **Next.js** | React framework with App Router | 14+ |
+| **TypeScript** | Type safety and better DX | 5.0+ |
+| **Tailwind CSS** | Utility-first CSS framework | 3.0+ |
+| **next-i18next** | Internationalization | Latest |
+| **Swiper.js** | Touch slider components | Latest |
+| **Lucide React** | Modern icon library | Latest |
+| **React** | UI library | 18+ |
 
-## 📱 Features in Detail
+## 📱 Responsive Design
 
-### Review Management
-- **Auto-sync** with Google Places API
-- **Real-time updates** every 6 hours
-- **Bulk operations** for multiple businesses
-- **Review analytics** and insights
+- **Mobile First** - Optimized for mobile devices
+- **Breakpoints**:
+  - `sm`: 640px+ (mobile landscape)
+  - `md`: 768px+ (tablet)
+  - `lg`: 1024px+ (desktop)
+  - `xl`: 1280px+ (large desktop)
 
-### Business Profiles
-- **Custom domains** and slugs
-- **Multi-language** content
-- **SEO optimized** pages
-- **Social media** integration
+## 🎨 Design System
 
-### Admin Dashboard
-- **Analytics overview**
-- **Client management**
-- **Review monitoring**
-- **System logs**
+### Colors
+- **Primary**: Blue tones for main branding
+- **Event Colors**: Unique colors per event (#3F8ACE, #EB352B, #C7292C)
+- **Plan Colors**: Distinctive themes (#E5E23B, #9BD3DD, #C8292C, #01796F, #E89ABE)
 
-## 🔒 Security
+### Typography
+- **Inter** - Modern, readable font for Latin text
+- **Kanit** - Thai-optimized font for Thai content
+- **Noto Sans Thai** - Fallback Thai font
 
-- **Environment validation** with Zod
-- **SQL injection protection** with parameterized queries
-- **XSS prevention** with proper sanitization
-- **CSRF protection** with Next.js built-ins
-- **Rate limiting** on API endpoints
+### Icons
+- **Lucide React** - Consistent icon system
+- **Custom SVGs** - Brand-specific icons in `/public/image/icon/`
 
-## 🧪 Testing
+## 🔧 Development Scripts
 
 ```bash
-# Run all tests
-pnpm test
+# Development
+pnpm dev              # Start development server
+pnpm build           # Build for production
+pnpm start           # Start production server
+pnpm lint            # Run ESLint
+pnpm type-check      # TypeScript compilation check
 
-# Run tests in watch mode
-pnpm test:watch
-
-# Run tests with coverage
-pnpm test:coverage
-
-# Run E2E tests
-pnpm test:e2e
+# Testing
+pnpm test            # Run tests
+pnpm test:watch      # Run tests in watch mode
 ```
 
-## 📦 Building & Deployment
+## 📦 Build & Deployment
+
+### Building for Production
 
 ```bash
-# Build for production
 pnpm build
-
-# Start production server
-pnpm start
-
-# Build and export static files
-pnpm export
 ```
 
 ### Deployment Options
 
-- **Vercel** (Recommended) - One-click deployment
+- **Vercel** (Recommended) - Zero-config deployment
 - **Netlify** - Static site hosting
 - **Docker** - Container deployment
-- **Self-hosted** - Traditional server setup
+- **Traditional hosting** - Export static files
+
+### Environment Variables
+
+Create `.env.local` for local development:
+
+```env
+# App Configuration
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# Add other environment variables as needed
+```
 
 ## 🤝 Contributing
 
@@ -211,59 +230,45 @@ pnpm export
    ```bash
    git checkout -b feature/amazing-feature
    ```
-3. **Make your changes**
-4. **Follow our coding standards**
-   - Use TypeScript
-   - Follow ESLint rules
-   - Write tests for new features
-   - Update documentation
-5. **Commit your changes**
+3. **Follow our coding standards**
+   - Use TypeScript for all new files
+   - Follow Tailwind CSS conventions
+   - Add translations for new text content
+   - Test on multiple screen sizes
+4. **Commit your changes**
    ```bash
    git commit -m 'feat: add amazing feature'
    ```
-6. **Push to the branch**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-7. **Open a Pull Request**
+5. **Push and create a Pull Request**
 
-### Code Style
+### Code Style Guidelines
 
-We use:
-- **ESLint** for code linting
-- **Prettier** for code formatting
-- **Husky** for pre-commit hooks
-- **Conventional Commits** for commit messages
-
-## 📝 Scripts
-
-| Script | Description |
-|--------|-------------|
-| `pnpm dev` | Start development server |
-| `pnpm build` | Build for production |
-| `pnpm start` | Start production server |
-| `pnpm lint` | Run ESLint |
-| `pnpm lint:fix` | Fix ESLint errors |
-| `pnpm type-check` | Run TypeScript compiler |
-| `pnpm test` | Run tests |
+- **Components**: PascalCase (e.g., `HeroSection.tsx`)
+- **Files**: kebab-case for utilities (e.g., `site.config.ts`)
+- **CSS**: Use Tailwind utilities, avoid custom CSS
+- **Images**: Organize by category in `/public/image/`
+- **Translations**: Add to both `en` and `th` locale files
 
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
 1. **Build Errors**
-   - Clear `.next` folder: `rm -rf .next`
-   - Reinstall dependencies: `rm -rf node_modules && pnpm install`
+   ```bash
+   rm -rf .next
+   pnpm install
+   pnpm build
+   ```
 
-2. **Database Connection**
-   - Check Supabase credentials
-   - Verify network connectivity
-   - Check environment variables
+2. **Translation Issues**
+   - Verify translation keys exist in both languages
+   - Check for syntax errors in JSON files
+   - Restart development server after changes
 
-3. **Google API Issues**
-   - Verify API keys
-   - Check API quotas
-   - Ensure proper permissions
+3. **Image Loading Issues**
+   - Ensure images exist in `/public/image/`
+   - Check file paths and extensions
+   - Verify Next.js Image component usage
 
 ## 📄 License
 
@@ -271,18 +276,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Next.js** team for the amazing framework
-- **Vercel** for hosting and deployment
-- **Supabase** for backend services
-- **shadcn** for the beautiful UI components
-- **Tailwind CSS** team for the utility-first approach
+- **THACCA** - Thailand Creative & Content Agency
+- **Next.js Team** - Amazing React framework
+- **Tailwind CSS** - Utility-first CSS framework
+- **Swiper.js** - Touch slider library
+- **Vercel** - Hosting and deployment platform
 
 ## 📞 Support
 
-- **Documentation**: [docs.taponit.com](https://docs.taponit.com)
-- **Email**: support@taponit.com
-- **GitHub Issues**: [Create an issue](https://github.com/your-org/tap-on-it/issues)
+- **Issues**: [GitHub Issues](https://github.com/your-org/thacca-splash/issues)
+- **Documentation**: Check this README and code comments
+- **Contact**: [Your contact information]
 
 ---
 
-Made with ❤️ by the Tap On It Team# thacca-splash
+Made with ❤️ for Thailand's Creative Community
