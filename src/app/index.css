@@ -240,11 +240,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter" !important;
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-  scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar {

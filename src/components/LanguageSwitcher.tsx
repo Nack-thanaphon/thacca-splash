@@ -1,7 +1,6 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
-import { i18n } from '@/config/i18n.config';
+import { useRouter } from 'next/navigation';
 
 interface LanguageSwitcherProps {
     currentLocale: string;
@@ -9,17 +8,11 @@ interface LanguageSwitcherProps {
 }
 
 export default function LanguageSwitcher({ currentLocale, className = '' }: LanguageSwitcherProps) {
-    const pathname = usePathname();
+
     const router = useRouter();
 
     const switchLanguage = (newLocale: string) => {
-        // Remove current locale from pathname
-        const segments = pathname.split('/').filter(Boolean);
-        const pathWithoutLocale = segments.slice(1).join('/');
-        // Create new path with new locale
-        const newPath = `/${newLocale}${pathWithoutLocale ? '/' + pathWithoutLocale : ''}`;
-
-        router.push(newPath);
+        router.push(`/${newLocale}`);
     };
 
     const currentLocaleText = currentLocale === 'en' ? 'TH' : 'EN';

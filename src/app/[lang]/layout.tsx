@@ -1,4 +1,3 @@
-import { i18n } from '@/config/i18n.config';
 import '../index.css';
 import { Header, Footer } from '@/components';
 
@@ -8,9 +7,9 @@ interface LayoutProps {
     params: { lang: string };
 }
 
-export default function LangLayout({ children, params }: LayoutProps) {
+export default function Layout({ children, params }: LayoutProps) {
     return (
-        <html lang={params.lang} suppressHydrationWarning>
+        <html lang={params.lang}>
             <body>
                 <Header params={params} />
                 {children}
@@ -19,11 +18,3 @@ export default function LangLayout({ children, params }: LayoutProps) {
         </html>
     );
 }
-
-// Generate static params for all supported locales
-export async function generateStaticParams() {
-    return i18n.locales.map((locale) => ({
-        lang: locale,
-    }));
-}
-

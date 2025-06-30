@@ -4,9 +4,9 @@ import { RegisterSection, ScheduleSection, PlanSection, EventSection } from '@/c
 
 const page = () => {
   return (
-    <>
+    <> 
       <RegisterSection />
-      <PlanSection />
+      {/* <PlanSection /> */}
       <ScheduleSection />
       <EventSection />
     </>

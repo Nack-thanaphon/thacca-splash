@@ -40,7 +40,7 @@ export function PhotoSlider() {
 
 
     return (
-        <div className="relative w-full p-5 max-w-[1200px] mx-auto">
+        <div className="relative w-full p-5 max-w-[1200px] mx-auto ">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={9}
@@ -65,17 +65,17 @@ export function PhotoSlider() {
                 }}
                 loop={true}
                 centeredSlides={false}
-                className="w-full flex items-center"
+                className="w-full flex items-center justify-center"
             >
                 {mockPhotoSliderData.map((slide, index) => (
                     <SwiperSlide key={index}>
-
-                        <div className="w-full h-full p-3">
+                        <div className="w-full h-full p-3 mx-auto">
                             <Image
                                 src={slide.Icon}
                                 alt={slide.title}
-                                width={200}
-                                height={200}
+                                width={400}
+                                height={400}
+                                className='w-full h-full'
                             />
                         </div>
                     </SwiperSlide>

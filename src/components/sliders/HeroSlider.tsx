@@ -68,7 +68,7 @@ export function HeroSlider() {
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={10}
-                slidesPerView={1}
+                slidesPerView={4}
                 slidesPerGroup={1}
                 breakpoints={{
                     768: {
@@ -82,7 +82,7 @@ export function HeroSlider() {
                     prevEl: '.swiper-button-prev-custom',
                 }}
                 autoplay={{
-                    delay: 3000,
+                    delay: 3500,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true,
                     reverseDirection: false,

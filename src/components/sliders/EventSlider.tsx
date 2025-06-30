@@ -82,19 +82,19 @@ export function EventSlider() {
                     <SwiperSlide key={index}>
                         <div
                             style={{ backgroundColor: slide.color }}
-                            className="w-full  p-6 space-y-4 px-16 py-6 flex flex-col items-center justify-center rounded-lg"
+                            className="w-full  p-6 space-y-4 px-16 py-6 flex flex-col items-center justify-center rounded-lg h-[500px] lg:h-full mx-auto"
                         >
                             <h3 className="text-white font-semibold text-lg text-center">{slide.title}</h3>
                             <div className="w-full h-full p-3">
                                 <Image
                                     src={slide.fontImage}
                                     alt={slide.title}
-                                    width={550}
+                                    width={850}
                                     height={950}
                                     className="mx-auto transition-transform duration-300 w-full h-full object-contain"
                                 />
                             </div>
-                            <div dangerouslySetInnerHTML={{ __html: slide.description }} className='text-white text-sm text-center leading-relaxed'></div>
+                            <div dangerouslySetInnerHTML={{ __html: slide.description }} className='text-white text-sm flex flex-col items-center justify-center text-center leading-relaxed'></div>
                             <Button
                                 variant="ghost"
                                 size="sm"
