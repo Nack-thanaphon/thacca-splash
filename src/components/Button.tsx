@@ -26,13 +26,13 @@ const Button = ({
     // Icon component based on position
     const getIcon = () => {
         switch (iconPosition) {
-            case 'left':
+        case 'left':
                 return <ArrowLeftIcon className="w-4 h-4" />;
-            case 'right':
+        case 'right':
                 return <ArrowRightIcon className="w-4 h-4" />;
-            default:
+        default:
                 return null;
-        }
+    }
     };
 
     // Base styles
