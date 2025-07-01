@@ -2,19 +2,22 @@
 
 import Link from 'next/link';
 import { FacebookIcon, InstagramIcon, XIcon, YoutubeIcon } from './icon';
+import { useTranslation } from '@/lib/i18n';
 
 export const Footer = () => {
+    const { t } = useTranslation();
+
     const menuItem = [
         {
-            title: 'ข้อตกลงและเงื่อนไข',
+            title: t('terms_conditions'),
             url: '/'
         },
         {
-            title: 'นโยบายความเป็นส่วนตัว',
+            title: t('privacy_policy'),
             url: '/project/'
         },
         {
-            title: 'สงวนลิขสิทธิ์สำนักงานพัฒนารัฐบาลดิจิทัล (องค์การมหาชน) (สพร.)',
+            title: t('copyright_full'),
             url: '/news/'
         }
     ];
@@ -67,9 +70,7 @@ export const Footer = () => {
                             ))}
 
                         </ul>
-                        <p className='lg:hidden block text-center mt-2'>
-                            สงวนลิขสิทธิ์ <br /> สำนักงานพัฒนารัฐบาลดิจิทัล (องค์การมหาชน) (สพร.)
-                        </p>
+                        <p className='lg:hidden block text-center mt-2' dangerouslySetInnerHTML={{ __html: t('copyright_short') }} />
                     </div>
                 </div>
             </nav>

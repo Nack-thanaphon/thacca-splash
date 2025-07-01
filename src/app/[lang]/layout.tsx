@@ -1,6 +1,6 @@
 import '../index.css';
 import { Header, Footer } from '@/components';
-
+import TranslationProvider from '@/context/TranslationProvider';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -11,9 +11,11 @@ export default function Layout({ children, params }: LayoutProps) {
     return (
         <html lang={params.lang}>
             <body>
-                <Header params={params} />
-                {children}
-                <Footer />
+                <TranslationProvider locale={params.lang as 'en' | 'th'}>
+                    <Header params={params} />
+                    {children}
+                    <Footer />
+                </TranslationProvider>
             </body>
         </html>
     );

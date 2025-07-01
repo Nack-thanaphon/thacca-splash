@@ -197,8 +197,8 @@
 }
 
 @font-face {
-  font-family: Inter;
-  src: url('/font/Inter/static/Inter_24pt-Medium.ttf') format('truetype');
+  font-family: Kanit;
+  src: url('/font/Kanit/Kanit-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -239,7 +239,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter" !important;
+  font-family: Kanit !important;
 }
 
 *::-webkit-scrollbar {

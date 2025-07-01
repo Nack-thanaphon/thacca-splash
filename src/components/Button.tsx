@@ -1,10 +1,10 @@
-import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
+import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
 import React from 'react';
 
 interface ButtonProps {
     children: React.ReactNode;
     className?: string;
-    iconPosition?: 'left' | 'right' | 'none';
+    iconPosition?: 'left' | 'right' | 'none' | 'down';
     variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
     size?: 'sm' | 'md' | 'lg';
     onClick?: () => void;
@@ -26,13 +26,15 @@ const Button = ({
     // Icon component based on position
     const getIcon = () => {
         switch (iconPosition) {
-        case 'left':
+            case 'left':
                 return <ArrowLeftIcon className="w-4 h-4" />;
-        case 'right':
+            case 'right':
                 return <ArrowRightIcon className="w-4 h-4" />;
-        default:
+            case 'down':
+                return <ArrowDownIcon className="w-4 h-4" />;
+            default:
                 return null;
-    }
+        }
     };
 
     // Base styles
@@ -66,6 +68,7 @@ const Button = ({
             {iconPosition === 'left' && getIcon()}
             <span>{children}</span>
             {iconPosition === 'right' && getIcon()}
+            {iconPosition === 'down' && getIcon()}
         </button>
     );
 };

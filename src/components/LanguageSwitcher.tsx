@@ -12,7 +12,7 @@ export default function LanguageSwitcher({ currentLocale, className = '' }: Lang
     const router = useRouter();
 
     const switchLanguage = (newLocale: string) => {
-        router.push(`/${newLocale}`);
+        window.location.href = `/${newLocale}`;
     };
 
     const currentLocaleText = currentLocale === 'en' ? 'TH' : 'EN';
