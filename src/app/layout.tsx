@@ -1,11 +1,16 @@
-import { Inter } from 'next/font/google';
+import { Kanit } from 'next/font/google';
 import './index.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
-const inter = Inter({ subsets: ['latin'] });
+
+const kanit = Kanit({
+    subsets: ['latin'],
+    weight: ['400', '500', '600', '700'],
+    variable: '--font-kanit'
+})
 
 export default function RootLayout({
     children,
@@ -14,7 +19,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={inter.className}>{children}</body>
+            <body className={kanit.className}>{children}</body>
         </html>
     );
 } 
