@@ -198,7 +198,7 @@
 
 @font-face {
   font-family: Kanit;
-  src: url('/font/Kanit/Kanit-Regular.ttf') format('truetype');
+  src: url('/font/kanit/Kanit-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -212,7 +212,7 @@
     -moz-transform: translateY(30px);
     -ms-transform: translateY(30px);
     -o-transform: translateY(30px);
-}
+  }
 
   to {
     opacity: 1;
